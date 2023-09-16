@@ -13,8 +13,8 @@
 int (*decision(char d))(va_list)
 {
 	int i;
-	int (*func[])(va_list) = {_string, _char, _decimal, _integer};
-	const char specifiers[] = "scdi";
+	int (*func[])(va_list) = {_string, _char, _decimal, _integer, percent};
+	const char specifiers[] = "scdi%";
 
 	for (i = 0; specifiers[i]; i++)
 	{
