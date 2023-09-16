@@ -20,9 +20,4 @@ int (*decision(char d))(va_list);
 int nothing(va_list);
 int percent(va_list);
 int address(va_list);
-typedef struct specify
-{
-	char c;
-	int (*func)(va_list);
-} specifiers;
 #endif

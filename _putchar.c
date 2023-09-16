@@ -13,15 +13,3 @@ int _putchar(int c)
 {
 	return (write(1, &c, 1));
 }
-
-/**
- * _uinteger - prints unsigned integer numbers
- * @args: The va_list containing the integer to be printed
- * Return: number of printed characters
- */
-/*
-int _uinteger(va_list args)
-{
-	long long int x = - (long long int)(va_arg(args, int)) + 1046;
-	return (_putdec(x, 0));
-}*/

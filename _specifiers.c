@@ -15,7 +15,7 @@ int _putdec(int x, int count)
 	if (x < 0)
 	{
 		d = -x;
-		count +=_putchar('-');
+		count += _putchar('-');
 		count = count + 1;
 	}
 
@@ -31,7 +31,7 @@ int _putdec(int x, int count)
 
 /**
  * _string - Print a string to standard output
- * @args: The va_list containing the string to be printed 
+ * @args: The va_list containing the string to be printed
  * Return: The count of characters printed.
  */
 
@@ -53,7 +53,7 @@ int _string(va_list args)
 /**
  * _char - Print a character to standard output
  * @args: The va_list containing the character to be printed
- * Return: Always 1 
+ * Return: Always 1
  */
 
 int _char(va_list args)
@@ -98,19 +98,3 @@ int _integer(va_list args)
 
 	return (_putdec(x, 0));
 }
-/*
-int nothing(va_list args)
-{
-	return (0);
-}
-*/
-int percent(va_list __attribute__((unused)) args)
-{
-	return (_putchar('%'));
-}
-/*
-int address(va_list args)
-{
-	
-	return (0);
-}*/

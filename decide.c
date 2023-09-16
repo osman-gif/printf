@@ -12,27 +12,10 @@
 
 int (*decision(char d))(va_list)
 {
-	/*specifiers choose[] = {
-		{'s', _string},
-		{'c', _char},
-		{'d', _decimal},
-		{'i', _integer},
-		{'\0', NULL}
-	};*/
-
 	int i;
 	int (*func[])(va_list) = {_string, _char, _decimal, _integer, percent};
 	const char specifiers[] = "scdi%";
 
-	/*printf("printf %c -- %c\n", choose[1].c, d);
-	while (choose[i].c != '\0')
-	{
-		printf("HH\n");
-		if (choose[i].c == d)
-			return (choose[i].func);
-		i++;
-	}
-	*/
 	for (i = 0; specifiers[i]; i++)
 	{
 		if (d == specifiers[i])
