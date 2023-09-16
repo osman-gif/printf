@@ -13,3 +13,14 @@ int _putchar(int c)
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * percent - prints a % symbol
+ * @args: symbol to be printed
+ * Return: return 1
+ */
+nt percent(va_list __attribute__((unused)) args)
+{
+	return (_putchar('%'));
+}
+
