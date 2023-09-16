@@ -21,8 +21,8 @@ int (*decision(char d))(va_list)
 	};*/
 
 	int i;
-	int (*func[])(va_list) = {_string, _char, _decimal, _integer, _uinteger, address, percent, nothing};
-	const char specifiers[] = "scdilp%0";
+	int (*func[])(va_list) = {_string, _char, _decimal, _integer, percent};
+	const char specifiers[] = "scdi%";
 
 	/*printf("printf %c -- %c\n", choose[1].c, d);
 	while (choose[i].c != '\0')

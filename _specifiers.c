@@ -38,10 +38,9 @@ int _putdec(int x, int count)
 int _string(va_list args)
 {
 	int count;
-	
-	count = 0;
 	char *str = va_arg(args, char*);
 
+	count = 0;
 	while (*str)
 	{
 		count = _putchar(*str);
@@ -99,17 +98,19 @@ int _integer(va_list args)
 
 	return (_putdec(x, 0));
 }
+/*
 int nothing(va_list args)
 {
 	return (0);
 }
-
-int percent(va_list args)
+*/
+int percent(va_list __attribute__((unused)) args)
 {
-	_putchar('%');
+	return (_putchar('%'));
 }
+/*
 int address(va_list args)
 {
 	
 	return (0);
-}
+}*/
