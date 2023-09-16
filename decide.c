@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "main.h"
 
 /**
  * decision - Decide which function to use based on specifier
