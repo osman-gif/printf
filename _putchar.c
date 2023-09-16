@@ -19,7 +19,7 @@ int _putchar(int c)
  * @args: symbol to be printed
  * Return: return 1
  */
-nt percent(va_list __attribute__((unused)) args)
+int percent(va_list __attribute__((unused)) args)
 {
 	return (_putchar('%'));
 }
