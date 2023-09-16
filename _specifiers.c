@@ -12,7 +12,6 @@ int _putdec(int x, int count)
 {
 	int d = x;
 
-	
 	if (x < 0)
 	{
 		d = -x;
@@ -78,8 +77,6 @@ int _decimal(va_list args)
 
 	int dec = va_arg(args, int);
 
-	if (!dec)
-		return (0);
 	count = _putdec(dec, 0);
 
 	return (count);
