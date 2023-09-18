@@ -94,7 +94,6 @@ int _decimal(va_list args)
 	int dec = va_arg(args, int);
 
 	count = _putdec(dec, 0);
-	/*printf("dec ## %d\n", count);*/
 	return (count);
 }
 

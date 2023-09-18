@@ -35,6 +35,5 @@ int unsign(va_list arg)
 		n = -n;
 		li = n;
 	}
-	printf("--%u\n",(unsigned int)INT_MAX + 1024);
 	return (_putdec(li, 0));
 }
