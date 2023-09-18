@@ -24,16 +24,23 @@ int percent(va_list __attribute__((unused)) args)
 {
 	return (_putchar('%'));
 }
-int unsign(va_list arg)
+
+/**
+ * _isdigit - checks of a digit character
+ * @c: character to be checked
+ * Return: 1 if digit 0 otherwise
+ */
+
+int _isdigit(int c)
 {
-	long int li;
-	int n = va_arg(arg, unsigned);
-	
-	li = 0;
-	if (n < 0)
+	int i;
+
+	for (i = 48; i < 58; i++)
 	{
-		n = -n;
-		li = n;
+		if (c == i)
+		{
+			return (1);
+		}
 	}
-	return (_putdec(li, 0));
+	return (0);
 }

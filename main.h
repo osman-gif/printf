@@ -22,4 +22,5 @@ int percent(va_list);
 int address(va_list);
 int _strlen(char *, int);
 int unsign(va_list);
+int _isdigit(int c);
 #endif

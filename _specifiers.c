@@ -11,6 +11,7 @@
 int _putdec(int x, int count)
 {
 	int d = x;
+
 	if (x < 0)
 	{
 		d = -x;
@@ -20,17 +21,13 @@ int _putdec(int x, int count)
 
 
 	if (d / 10)
-        {
-                count = _putdec(d / 10, count);
-        }
+	{
+		count = _putdec(d / 10, count);
+	}
 
-        _putchar(d % 10 + '0');
-        return (count + 1);
-	
-	/*count += _putchar(d % 10 + '0');
-	printf("ints == %d\n", i);
-	return (count + 1);*/
+	_putchar(d % 10 + '0');
 
+	return (count + 1);
 }
 
 /**
@@ -41,18 +38,27 @@ int _putdec(int x, int count)
 
 int _string(va_list args)
 {
-	int __attribute__((unused)) count, size;
+	int __attribute__((unused)) count, size, i;
+	char *s;
 	char *str = va_arg(args, char*);
 
-	/*size = _strlen(str, 0);*/
+	size = _strlen(str, 0);
 	count = 0;
 
+	s = malloc(size * sizeof(char *));
 
-	while (*str)
+	for (i = 0; i < 15; i++)
 	{
-		count += _putchar(*str);
-		str++;
+		s[i] = str[i];
 	}
+
+	i = 0;
+	while (s[i])
+	{
+		count += _putchar(s[i]);
+		i++;
+	}
+	free(s);
 	return (count);
 
 }
@@ -63,7 +69,7 @@ int _strlen(char *s, int c)
 	{
 		return (c);
 	}
-	return _strlen(s++, c++);
+	return (_strlen(s, ++c));
 
 }
 /**
@@ -93,8 +99,12 @@ int _decimal(va_list args)
 
 	int dec = va_arg(args, int);
 
+	if (_isdigit(dec))
+	{
+		return (0);
+	}
 	count = _putdec(dec, 0);
-	return (count - 1);
+	return (count);
 }
 
 /**
