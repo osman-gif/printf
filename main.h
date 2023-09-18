@@ -20,4 +20,6 @@ int (*decision(char d))(va_list);
 int nothing(va_list);
 int percent(va_list);
 int address(va_list);
+int _strlen(char *, int);
+int unsign(va_list);
 #endif

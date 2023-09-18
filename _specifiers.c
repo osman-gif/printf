@@ -11,21 +11,25 @@
 int _putdec(int x, int count)
 {
 	int d = x;
-
 	if (x < 0)
 	{
 		d = -x;
 		count += _putchar('-');
-		count = count + 1;
+		/*count = count + 1;*/
 	}
+
 
 	if (d / 10)
-	{
-		count = _putdec(d / 10, count);
-	}
+        {
+                count = _putdec(d / 10, count);
+        }
 
-	count += _putchar(d % 10 + '0');
-	return (count + 1);
+        _putchar(d % 10 + '0');
+        return (count + 1);
+	
+	/*count += _putchar(d % 10 + '0');
+	printf("ints == %d\n", i);
+	return (count + 1);*/
 
 }
 
@@ -37,19 +41,31 @@ int _putdec(int x, int count)
 
 int _string(va_list args)
 {
-	int count;
+	int __attribute__((unused)) count, size;
 	char *str = va_arg(args, char*);
 
+	/*size = _strlen(str, 0);*/
 	count = 0;
+
+
 	while (*str)
 	{
-		count = _putchar(*str);
+		count += _putchar(*str);
 		str++;
 	}
 	return (count);
 
 }
 
+int _strlen(char *s, int c)
+{
+	if (s[c] == '\0')
+	{
+		return (c);
+	}
+	return _strlen(s++, c++);
+
+}
 /**
  * _char - Print a character to standard output
  * @args: The va_list containing the character to be printed
@@ -78,7 +94,7 @@ int _decimal(va_list args)
 	int dec = va_arg(args, int);
 
 	count = _putdec(dec, 0);
-
+	/*printf("dec ## %d\n", count);*/
 	return (count);
 }
 

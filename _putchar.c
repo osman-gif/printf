@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * _putchar - Writes a character to standard output
  * @c: The character to be written
@@ -23,4 +24,17 @@ int percent(va_list __attribute__((unused)) args)
 {
 	return (_putchar('%'));
 }
-
+int unsign(va_list arg)
+{
+	long int li;
+	int n = va_arg(arg, unsigned);
+	
+	li = 0;
+	if (n < 0)
+	{
+		n = -n;
+		li = n;
+	}
+	printf("--%u\n",(unsigned int)INT_MAX + 1024);
+	return (_putdec(li, 0));
+}

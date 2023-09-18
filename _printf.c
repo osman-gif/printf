@@ -25,6 +25,7 @@ int _printf(const char *format, ...)
 		{
 			if (format[i + 1] == '%')
 			{
+				cnt++;
 			}
 			if (format[i + 1] != '\0')
 			{
@@ -45,10 +46,11 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			_putchar(format[i]);		}
+			_putchar(format[i]);
+		}
 		i++;
 	}
-
+	printf("count: %d\n",cnt);
 	va_end(args);
 	return (cnt);
 }
