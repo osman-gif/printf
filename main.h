@@ -30,4 +30,6 @@ int oct(va_list);
 int putaddr(char *, int);
 int addr(va_list);
 int puthexadd(unsigned long n, int count);
+int binary(va_list);
+int put_binary(unsigned int, int);
 #endif

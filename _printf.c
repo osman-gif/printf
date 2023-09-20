@@ -115,3 +115,16 @@ int puthexadd(unsigned long n, int count)
 	return (count + 1);
 }
 
+int put_binary(unsigned int i, int count)
+{
+	if (i < 2)
+		return (_putchar(i % 2 + 48));
+	count = put_binary(i / 2, count);
+	_putchar(i % 2 + 48);
+	return (count + 1);
+}
+int binary(va_list arg)
+{
+	unsigned int x = va_arg(arg, unsigned int);
+	return (put_binary(x, 0));
+}

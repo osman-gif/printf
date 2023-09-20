@@ -14,8 +14,8 @@ int (*decision(char d))(va_list)
 {
 	int i;
 	int (*func[])(va_list) = {_string, _char, _decimal,
-		_integer, hexa, heXa, addr, oct, percent};
-	const char specifiers[] = "scdixXpo%";
+		_integer, hexa, heXa, addr, oct, binary, percent};
+	const char specifiers[] = "scdixXpob%";
 
 	for (i = 0; specifiers[i]; i++)
 	{
