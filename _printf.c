@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 	if(format[cnt - 1] == '\0')
 		return (-1);
 	va_end(args);
-	return (cnt + 1);
+	return (cnt);
 }
 
 /**
