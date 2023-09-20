@@ -52,3 +52,66 @@ int _printf(const char *format, ...)
 	va_end(args);
 	return (cnt);
 }
+
+/**
+ * addr - prints address of a variable
+ * @arg: variable whose address is to be printed
+ * Return: Returns count of digit printed
+ */
+int addr(va_list arg)
+{
+	void *address = va_arg(arg, void *);
+	unsigned long iaddress = (unsigned long)address;
+
+	return (puthexadd(iaddress, 0));
+}
+
+/**
+ * puthexadd - prints a hexadecimal representation of a integer number
+ * @n: Decimal number to be converted
+ * @count: number of digit printed
+ * Return: Return count of printed digit
+ */
+int puthexadd(unsigned long n, int count)
+{
+	if (n < 10)
+	{
+		count += _putchar(n + 48);
+	}
+
+	if (n / 16 != 0)
+	{
+		count = putheX(n / 16, count);
+	}
+
+	if (n > 9)
+	{
+		switch (n % 16)
+		{
+			case 10:
+				_putchar('a');
+				break;
+			case 11:
+				_putchar('b');
+				break;
+			case 12:
+				_putchar('c');
+				break;
+			case 13:
+				_putchar('d');
+				break;
+			case 14:
+				_putchar('e');
+				break;
+			case 15:
+				_putchar('f');
+				break;
+			default:
+				_putchar(n % 16 + 48);
+				break;
+		}
+	}
+
+	return (count + 1);
+}
+

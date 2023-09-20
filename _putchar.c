@@ -26,21 +26,27 @@ int percent(va_list __attribute__((unused)) args)
 }
 
 /**
- * _isdigit - checks of a digit character
- * @c: character to be checked
- * Return: 1 if digit 0 otherwise
+ * heXa - Convert a decimal number into hexadecimal
+ * @arg: Decimal number to be converted
+ * Return: Returns number of digit printed
  */
 
-int _isdigit(int c)
+int heXa(va_list arg)
 {
-	int i;
+	unsigned int X = va_arg(arg, unsigned int);
 
-	for (i = 48; i < 58; i++)
-	{
-		if (c == i)
-		{
-			return (1);
-		}
-	}
-	return (0);
+	return (putheX(X, 0));
+}
+
+/**
+ * hexa - Convert a decimal number into hexadecimal
+ * @arg: Decimal number to be converted
+ * Return: Returns number of digit printed
+ */
+
+int hexa(va_list arg)
+{
+	unsigned int x = va_arg(arg, unsigned int);
+
+	return (puthex(x, 0));
 }

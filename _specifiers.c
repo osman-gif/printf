@@ -96,14 +96,10 @@ int _char(va_list args)
 int _decimal(va_list args)
 {
 	int count = 0;
-
 	int dec = va_arg(args, int);
 
-	if (_isdigit(dec))
-	{
-		return (0);
-	}
 	count = _putdec(dec, 0);
+
 	return (count);
 }
 

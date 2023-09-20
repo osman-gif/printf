@@ -23,4 +23,6 @@ int address(va_list);
 int _strlen(char *, int);
 int unsign(va_list);
 int _isdigit(int c);
+int puthex(int n, int count);
+int hexa(va_list);
 #endif
