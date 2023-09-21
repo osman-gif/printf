@@ -49,7 +49,7 @@ int _string(va_list args)
 	if (s == NULL)
 		return (1);
 
-	for (i = 0; i < 15; i++)
+	for (i = 0; i < size; i++)
 	{
 		s[i] = str[i];
 	}
