@@ -60,6 +60,7 @@ int _string(va_list args)
 		count += _putchar(s[i]);
 		i++;
 	}
+	va_end(args);
 	free(s);
 	s = NULL;
 	return (count);
