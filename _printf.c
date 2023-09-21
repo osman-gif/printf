@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 
 	while (format[i] != '\0')
 	{
-		cnt++;
+		/*cnt++;*/
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '%')
@@ -33,24 +33,24 @@ int _printf(const char *format, ...)
 				if (function != NULL)
 				{
 					/*cnt +=*/
-					function(args);
+					cnt += function(args);
 					i++;
 				}
 				else
 				{
-					_putchar(format[i]);
+					cnt +=_putchar(format[i]);
 					/*cnt++;*/
 				}
 			}
 		}
 		else
 		{
-			_putchar(format[i]);
+			cnt +=_putchar(format[i]);
 		}
 		i++;
 	}
-	if(format[cnt - 1] == '\0')
-		return (-1);
+	/*if(format[cnt - 1] == '\0')*/
+		/*return (-1);*/
 	va_end(args);
 	return (cnt);
 }
@@ -78,7 +78,7 @@ int puthexadd(unsigned long n, int count)
 {
 	if (n < 10)
 	{
-		count += _putchar(n + 48);
+		_putchar(n + 48);
 	}
 
 	if (n / 16 != 0)
@@ -119,10 +119,10 @@ int puthexadd(unsigned long n, int count)
 
 int put_binary(unsigned int i, int count)
 {
-	if (i < 2)
-		return (_putchar(i % 2 + 48));
-	count = put_binary(i / 2, count);
+	if (i / 2 != 0)
+		count = put_binary(i / 2, count++);
 	_putchar(i % 2 + 48);
+	
 	return (count + 1);
 }
 int binary(va_list arg)

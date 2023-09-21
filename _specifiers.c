@@ -83,7 +83,7 @@ int _char(va_list args)
 	char ch = va_arg(args, int);
 
 	if (ch == '%')
-		return (1);
+		return (0);
 	return (_putchar(ch));
 }
 

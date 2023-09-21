@@ -38,7 +38,7 @@ int putheX(unsigned int n, int count)
 {
 	if (n < 10)
 	{
-		count += _putchar(n + 48);
+		_putchar(n + 48);
 	}
 
 	if (n / 16 != 0)
@@ -88,7 +88,7 @@ int puthex(unsigned int n, int count)
 {
 	if (n < 10)
 	{
-		count += _putchar(n + 48);
+		_putchar(n + 48);
 	}
 
 	if (n / 16 != 0)
