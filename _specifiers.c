@@ -47,7 +47,7 @@ int _string(va_list args)
 
 	s = malloc(size * sizeof(char *));
 	if (s == NULL)
-		return (-1);
+		return (1);
 
 	for (i = 0; i < 15; i++)
 	{
