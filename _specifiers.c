@@ -61,6 +61,7 @@ int _string(va_list args)
 		i++;
 	}
 	free(s);
+	s = NULL;
 	return (count);
 
 }
