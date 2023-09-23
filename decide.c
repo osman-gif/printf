@@ -51,6 +51,8 @@ int oct(va_list arg)
 int addr(va_list arg)
 {
 	void *address = va_arg(arg, void *);
+	if (address == NULL)
+		return (1);
 	unsigned long iaddress = (unsigned long)address;
 
 	_putchar('0');
