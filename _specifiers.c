@@ -42,6 +42,8 @@ int _string(va_list args)
 	char *s;
 	char *str = va_arg(args, char*);
 
+	if (str == NULL)
+		return (1);
 	sized = _strlen(str, 0);
 	count = 0;
 
