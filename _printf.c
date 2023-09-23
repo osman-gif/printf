@@ -20,7 +20,6 @@ int _printf(const char *format, ...)
 
 	while (format[i] != '\0')
 	{
-		/*cnt++;*/
 		if (format[i] == '%')
 		{
 			if (format[i + 1] == '%')
@@ -32,101 +31,22 @@ int _printf(const char *format, ...)
 
 				if (function != NULL)
 				{
-					/*cnt +=*/
 					cnt += function(args);
 					i++;
 				}
 				else
 				{
-					cnt +=_putchar(format[i]);
-					/*cnt++;*/
+					cnt += _putchar(format[i]);
 				}
 			}
 		}
 		else
 		{
-			cnt +=_putchar(format[i]);
+			cnt += _putchar(format[i]);
 		}
 		i++;
 	}
-	/*if(format[cnt - 1] == '\0')*/
-		/*return (-1);*/
 	va_end(args);
 	return (cnt);
 }
 
-/**
- * addr - prints address of a variable
- * @arg: variable whose address is to be printed
- * Return: Returns count of digit printed
- */
-int addr(va_list arg)
-{
-	void *address = va_arg(arg, void *);
-	unsigned long iaddress = (unsigned long)address;
-
-	return (puthexadd(iaddress, 0));
-}
-
-/**
- * puthexadd - prints a hexadecimal representation of a integer number
- * @n: Decimal number to be converted
- * @count: number of digit printed
- * Return: Return count of printed digit
- */
-int puthexadd(unsigned long n, int count)
-{
-	if (n < 10)
-	{
-		_putchar(n + 48);
-	}
-
-	if (n / 16 != 0)
-	{
-		count = putheX(n / 16, count);
-	}
-
-	if (n > 9)
-	{
-		switch (n % 16)
-		{
-			case 10:
-				_putchar('a');
-				break;
-			case 11:
-				_putchar('b');
-				break;
-			case 12:
-				_putchar('c');
-				break;
-			case 13:
-				_putchar('d');
-				break;
-			case 14:
-				_putchar('e');
-				break;
-			case 15:
-				_putchar('f');
-				break;
-			default:
-				_putchar(n % 16 + 48);
-				break;
-		}
-	}
-
-	return (count + 1);
-}
-
-int put_binary(unsigned int i, int count)
-{
-	if (i / 2 != 0)
-		count = put_binary(i / 2, count++);
-	_putchar(i % 2 + 48);
-	
-	return (count + 1);
-}
-int binary(va_list arg)
-{
-	unsigned int x = va_arg(arg, unsigned int);
-	return (put_binary(x, 0));
-}

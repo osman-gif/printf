@@ -6,7 +6,7 @@
 int percent(va_list);
 int _printf(const char *format, ...);
 int _putchar(int c);
-int _putdec(int x, int cnt);
+int _putdec(long int x, int cnt);
 int _string(va_list args);
 int _char(va_list args);
 int _decimal(va_list args);

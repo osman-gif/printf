@@ -1,1 +1,1 @@
-In this project we built our own printf function
+In this project i will built my own printf function that is behaving the same as the printf function of the standard library "stdio.h" library, with out using any library function such as putchar etc.

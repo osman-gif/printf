@@ -8,9 +8,9 @@
  * Return: The updated count of characters printed.
  */
 
-int _putdec(int x, int count)
+int _putdec(long int x, int count)
 {
-	int d = x;
+	long int d = x;
 
 	if (x < 0)
 	{
@@ -22,7 +22,7 @@ int _putdec(int x, int count)
 
 	if (d / 10)
 	{
-		count = _putdec(d / 10, count);
+		count = _putdec(d / 10, count++);
 	}
 
 	_putchar(d % 10 + '0');
@@ -38,35 +38,39 @@ int _putdec(int x, int count)
 
 int _string(va_list args)
 {
-	int __attribute__((unused)) count, size, i;
+	int __attribute__((unused)) count, sized, i;
 	char *s;
 	char *str = va_arg(args, char*);
 
-	size = _strlen(str, 0);
+	sized = _strlen(str, 0);
 	count = 0;
 
-	s = malloc(size * sizeof(char *));
+	s = malloc(sized);
 	if (s == NULL)
 		return (1);
 
-	for (i = 0; i < size; i++)
+	for (i = 0; i < sized; i++)
 	{
 		s[i] = str[i];
 	}
-
-	i = 0;
-	while (s[i])
-	{
-		count += _putchar(s[i]);
-		i++;
-	}
 	va_end(args);
+	i = 0;
+	while (str[i] != 0)
+	{
+		count += _putchar(str[i]);
+		++i;
+	}
 	free(s);
-	s = NULL;
 	return (count);
 
 }
 
+/**
+ * _strlen - Calculates the lenght of a string
+ * @s: Pointer to the string that length will be calculated
+ * @c: Counter to track the number of chars in the string
+ * Return: Returns the length of the string s
+ */
 int _strlen(char *s, int c)
 {
 	if (s[c] == '\0')
@@ -100,7 +104,7 @@ int _char(va_list args)
 int _decimal(va_list args)
 {
 	int count = 0;
-	int dec = va_arg(args, int);
+	long int dec = (long int)va_arg(args, int);
 
 	count = _putdec(dec, 0);
 
@@ -119,7 +123,7 @@ int _decimal(va_list args)
 
 int _integer(va_list args)
 {
-	int x = va_arg(args, int);
+	long int x = (long int) va_arg(args, int);
 
 	return (_putdec(x, 0));
 }
