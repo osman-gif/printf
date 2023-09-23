@@ -55,7 +55,7 @@ int addr(va_list arg)
 
 	_putchar('0');
 	_putchar('x');
-	return (puthexadd(iaddress, 0));
+	return (puthexadd(iaddress, 0) + 2);
 }
 
 /**
