@@ -54,7 +54,7 @@ int addr(va_list arg)
 	unsigned long iaddress = (unsigned long)address;
 
 	if (address == NULL)
-		return (NULL);
+		return (0);
 	_putchar('0');
 	_putchar('x');
 	return (puthexadd(iaddress, 0) + 2);
