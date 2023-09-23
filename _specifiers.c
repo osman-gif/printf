@@ -45,7 +45,7 @@ int _string(va_list args)
 	sized = _strlen(str, 0);
 	count = 0;
 
-	s = malloc(sized);
+	s = malloc(sizeof(char) * sized);
 	if (s == NULL)
 		return (1);
 
